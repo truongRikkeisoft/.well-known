@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.outgrow.jp.stg",
+    "sha256_cert_fingerprints":
+    ["DB:34:72:1D:CE:01:29:1A:D0:85:51:E0:E3:07:A2:C2:30:EB:E0:79:3B:9F:FB:17:F1:4E:A4:DB:26:05:BF:9F"]
+  }
+}]
