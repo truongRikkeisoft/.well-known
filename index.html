@@ -6,11 +6,21 @@
         <script type="text/javascript">
             window.onload = function () {
                 var isAndroid = /android/i.test(navigator.userAgent);
-                var isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+                var appPackageName = 'com.outgrow.jp.stg';
+                var appUrlScheme = 'intent://outgrow.jp.stg/#Intent;scheme=yourappscheme;package=' + appPackageName + ';end';
+
                 if (isAndroid) {
 
-                    // Redirect to the Play Store
-                    window.location.href = 'https://play.google.com/store/apps/details?id=com.outgrow.jp.stg';
+                    // Try to open the app
+                    var iframe = document.createElement('iframe');
+                    iframe.style.display = 'none';
+                    iframe.src = appUrlScheme;
+                    document.body.appendChild(iframe);
+
+                    // Fallback to Play Store if the app is not installed
+                    setTimeout(function () {
+                        window.location.href = 'https://play.google.com/store/apps/details?id=' + appPackageName;
+                    }, 2000);
                 }
             }
         </script>
