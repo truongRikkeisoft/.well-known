@@ -4,15 +4,25 @@
         <title>Your Website Title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript">
-            window.onload = function () {
+            function isAppInstalled(packageName) {
+                return navigator.userAgent.indexOf(packageName) !== -1;
+            }
+
+            function openAppOrPlayStore() {
+                if (isAppInstalled('com.outgrow.jp.stg')) {
+                    // Open your app (Intent URL)
+                    window.location.href = 'https://outgrow.jp/signup-account';
+                } else {
+                    // Open Play Store (Dynamic Link)
+                    window.location.href = 'ttps://play.google.com/store/apps/details?id=com.outgrow.jp.stg';
+                }
+            }
+            /*window.onload = function () {
                 var isAndroid = /android/i.test(navigator.userAgent);
                 var appPackageName = 'com.outgrow.jp.stg';
                 var appUrlScheme = 'intent://outgrow.jp/signup-account/#Intent;scheme=https;package=' + appPackageName + ';end';
 
                 if (isAndroid) {
-
-
-
                     // Try to open the app
                     var iframe = document.createElement('iframe');
                     iframe.style.display = 'none';
@@ -24,7 +34,7 @@
                         window.location.href = 'https://play.google.com/store/apps/details?id=' + appPackageName;
                     }, 2000);
                 }
-            }
+            }*/
         </script>
     </head>
     <body>
