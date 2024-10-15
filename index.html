@@ -7,9 +7,11 @@
             window.onload = function () {
                 var isAndroid = /android/i.test(navigator.userAgent);
                 var appPackageName = 'com.outgrow.jp.stg';
-                var appUrlScheme = 'intent://outgrow.jp.stg/#Intent;scheme=yourappscheme;package=' + appPackageName + ';end';
+                var appUrlScheme = 'intent://outgrow.jp/signup-account/#Intent;scheme=https;package=' + appPackageName + ';end';
 
                 if (isAndroid) {
+
+
 
                     // Try to open the app
                     var iframe = document.createElement('iframe');
